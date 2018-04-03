@@ -1,0 +1,18 @@
+<table>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <th><%= article.title %></th>
+        <td><%= article.text.to_s[0..50] %><%= article.text.length > 50 ? "..." : "" %></td>
+        <td><%= link_to "# edit", edit_article_path(article) %></td>
+        <td><%= link_to "- delete", article_path(article), :method => :delete %></td>
+      </tr>
+    <% end %>
+    <% if @articles.empty? %>
+      <tr>
+        <th colSpan="3">No articles.</th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p><%= link_to "+ add new", new_article_path %></p>
