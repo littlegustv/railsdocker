@@ -1,0 +1,33 @@
+#db:
+#  image: mysql/mysql-server:5.5
+#  environment:
+#    MYSQL_ROOT_PASSWORD: rootpasswd
+#    MYSQL_DATABASE: "RailsDocker_development"
+#    MYSQL_USER: "sdbm"
+#    MYSQL_PASSWORD: "sdbm"
+#  ports:
+#    - "3307:3307"
+version: '2'
+services:
+  rails:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    volumes:
+      - .:/RailsDocker
+    env_file:
+      - '.env.web'
+  db:
+  #  image: library/mysql:5.6.22
+    image: mysql/mysql-server:5.5
+    ports:
+      - "3307:3307"
+    volumes:
+      - db-data:/var/lib/mysql
+    env_file:
+      - '.env.db'
+volumes:
+  db-data:
+    driver: local

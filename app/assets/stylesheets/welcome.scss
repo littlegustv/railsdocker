@@ -4,6 +4,7 @@
 
 body {
   font-family: Monospace;
+  text-align: center;
 }
 input, textarea {
   width: 100%;
@@ -17,4 +18,8 @@ input, textarea {
 }
 .done {
   text-decoration: line-through;
+}
+table {
+  width: 100%;
+  text-align: left;
 }

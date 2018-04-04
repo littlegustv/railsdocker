@@ -3,7 +3,7 @@
     <% @articles.each do |article| %>
       <tr>
         <th><%= article.title %></th>
-        <td><%= article.text.to_s[0..50] %><%= article.text.length > 50 ? "..." : "" %></td>
+        <td><%= article.text.to_s[0..50] %><%= article.text.to_s.length > 50 ? "..." : "" %></td>
         <td><%= link_to "# edit", edit_article_path(article) %></td>
         <td><%= link_to "- delete", article_path(article), :method => :delete %></td>
       </tr>

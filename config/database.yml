@@ -13,9 +13,12 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: <%= ENV["SDBMSS_DB_USER"] %>
-  password: <%= ENV["SDBMSS_DB_PASSWORD"] %>
-  socket: /var/run/mysqld/mysqld.sock
+  #username: <%= ENV["SDBMSS_DB_USER"] %>
+  #password: <%= ENV["SDBMSS_DB_PASSWORD"] %>
+  #socket: /var/run/mysqld/mysqld.sock
+  host: db
+  username: dbuser
+  password: userpass
 
 development:
   <<: *default
@@ -50,5 +53,5 @@ test:
 production:
   <<: *default
   database: RailsDocker_production
-  username: RailsDocker
-  password: <%= ENV['RAILSDOCKER_DATABASE_PASSWORD'] %>
+  #username: RailsDocker
+  #password: <%= ENV['RAILSDOCKER_DATABASE_PASSWORD'] %>
