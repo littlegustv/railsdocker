@@ -2,7 +2,7 @@ FROM ruby:2.2.3-slim
 
 MAINTAINER Benny Heller <hellerb@upenn.edu>
 
-RUN apt-get update-qq
+RUN apt-get update -qq
 RUN apt-get install -qq -y build-essential patch ruby-dev zlib1g-dev liblzma-dev libmysqlclient-dev nodejs
 
 # sets up the directory for the app, I guess
