@@ -27,8 +27,8 @@ RUN bundle exec rake assets:precompile --trace
 # ??
 
 # VOLUME ["$INSTALL_PATH/public"]
-
-CMD bundle exec rails s -b 0.0.0.0 -p 8080
+#bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+CMD rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0 -p 8080
 #CMD bundle exec rails db:migrate RAILS_ENV=development
 
 # EXPOSE 8080

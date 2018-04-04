@@ -3,7 +3,10 @@ class ArticlesController < ApplicationController
   before_action :set_model, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    s = Article.search do
+      fulltext params[:term].to_s
+    end
+    @articles = s.results
   end
 
   def new
