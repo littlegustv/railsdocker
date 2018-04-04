@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'sunspot_rails', '~> 2.2.4'
 
+gem 'delayed_job'
+gem 'delayed_job_active_record'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

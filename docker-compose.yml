@@ -41,6 +41,13 @@ services:
       - docker-entrypoint.sh
       - solr-precreate
       - development
+  delayedjob:
+    build: .
+    links:
+      - db
+      - solr
+    volumes:
+      - .:/RailsDocker
 volumes:
   db-data:
     driver: local

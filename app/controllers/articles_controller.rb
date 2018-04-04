@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article.update(articles_params)
+    @article.delay.index
     redirect_to @article
   end
 
@@ -30,6 +31,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(articles_params)
     @article.save
+    @article.delay.index
     redirect_to @article
   end
 
