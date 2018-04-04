@@ -1,8 +1,17 @@
 <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Text</th>
+      <th>Options</th>
+    </tr>
+  </thead>
   <tbody>
     <% @articles.each do |article| %>
       <tr>
         <th><%= article.title %></th>
+        <td><%= article.author %></td>
         <td><%= article.text.to_s[0..50] %><%= article.text.to_s.length > 50 ? "..." : "" %></td>
         <td><%= link_to "# edit", edit_article_path(article) %></td>
         <td><%= link_to "- delete", article_path(article), :method => :delete %></td>
