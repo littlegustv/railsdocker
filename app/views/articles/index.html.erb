@@ -14,7 +14,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <th><%= article.title %></th>
+        <td><%= link_to article.title, article_path(article) %></td>
         <td><%= article.author %></td>
         <td><%= article.text.to_s[0..50] %><%= article.text.to_s.length > 50 ? "..." : "" %></td>
         <td><%= link_to "# edit", edit_article_path(article) %></td>
